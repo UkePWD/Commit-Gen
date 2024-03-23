@@ -1,4 +1,4 @@
-name: Tukang Commit
+name: Kang Commit
 
 on:
   push:
@@ -17,13 +17,33 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
           
-      - name: Run Bot Task
+      - name: Modify last update
+        run: | 
+          d=`date '+%Y-%m-%dT%H:%M:%SZ'`
+          echo "## 😵 LAST UPDATED AT: ${d}" > update.md
+
+      - name: Commit changes
         run: |
-          chmod +x ./task.sh
-          ./task.sh
+          git config --local user.email "arvinpwd@gmail.com"
+          git config --local user.name "ArvinHPWD"
+          git add -A
+
+          arr[0]="bot: 👋 Hello Dude!"
+          arr[1]="bot: 🥳 Yuhhuuu!"
+          arr[2]="bot: 😬 Working from Github."
+          arr[3]="bot: 👨‍💻 Work, work, work!"
+          arr[4]="bot: 😪 Hufft..."
+          arr[5]="bot: 😎 I'm working for my phone!"
+          arr[6]="bot: 🙄 Running task, again."
+          arr[7]="bot: 👻 Thanks phone."
+
+          d=`date '+%Y-%m-%dT%H:%M:%SZ'`
+          rand=$[$RANDOM % ${#arr[@]}]
+          
+          git commit -am "${arr[$rand]} (at ${d})"
           
       - name: GitHub Push
-        uses: ad-m/github-push-action@v0.5.0
+        uses: ad-m/github-push-action@master
         with:
           force: true
           directory: "."
