@@ -12,8 +12,8 @@ arr[7]="bot: 👻 Thanks master."
 rand=$[$RANDOM % ${#arr[@]}]
 d=`date '+%Y-%m-%dT%H:%M:%SZ'`
 
-echo "## 🤔 LAST UPDATED AT: ${d}" > update.md
+echo "## 🤧 LAST UPDATED AT: ${d}" > update.md
 
-git config --local user.email "arvinpwd@gmail.com"
+git config --local user.email "ukepurwadi@gmail.com"
 git config --local user.name "ArvinHPWD"
 git commit -am "${arr[$rand]} (at ${d})"
