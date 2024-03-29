@@ -43,7 +43,7 @@ jobs:
           git commit -am "${arr[$rand]} (at ${d})"
           
       - name: GitHub Push
-        uses: ad-m/github-push-action@Pwd
+        uses: ad-m/github-push-action@master
         with:
           force: true
           directory: "."
