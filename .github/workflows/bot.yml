@@ -6,7 +6,7 @@ on:
       - Master
       
   schedule:
-    - cron: "3 * * * *"
+    - cron: "1 * * * *"
 
 jobs:
   auto-commit:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --local user.email "ukepurwadi@gmail.com"
+          git config --local user.email "arvinhpwd@gmail.com"
           git config --local user.name "ArvinHPWD"
           git add -A
 
