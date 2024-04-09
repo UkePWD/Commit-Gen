@@ -6,7 +6,7 @@ on:
       - Pwd
       
   schedule:
-    - cron: "1 * * * *"
+    - cron: "* * * * *"
 
 jobs:
   auto-commit:
@@ -24,8 +24,8 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --local user.email "arvinhpwd@gmail.com"
-          git config --local user.name "ArvinHPWD"
+          git config --local user.email "pwd@gmail.com"
+          git config --local user.name "UkePWD"
           git add -A
 
           arr[0]="bot: 👋 Hello Dude!"
